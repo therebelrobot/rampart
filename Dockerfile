@@ -1,5 +1,5 @@
 # ---- build: client (Vite) + server (esbuild, single file) ----
-FROM node:24-alpine AS build
+FROM node:26-alpine AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund
@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build && npm test
 
 # ---- runtime: just Node and the built output, no node_modules ----
-FROM node:24-alpine
+FROM node:26-alpine
 LABEL org.opencontainers.image.source="https://github.com/therebelrobot/rampart" \
       org.opencontainers.image.description="Pixel-art palette generator: value-first, hue-shifted ramps with Procreate export" \
       org.opencontainers.image.licenses="Unlicense"
