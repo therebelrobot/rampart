@@ -1,6 +1,6 @@
 {
   "name": "rampart",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Self-hosted pixel-art palette generator: value-first, hue-shifted color ramps with Procreate export.",
   "license": "Unlicense",
   "private": true,
